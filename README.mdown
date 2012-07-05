@@ -1,0 +1,27 @@
+CodeIgniter Excerpt
+=====================
+
+This is a [CodeIgniter's Text Helper](http://codeigniter.com/user_guide/helpers/text_helper.html) extension.  
+Truncates a HTML string to the number of characters specified. Safely extracts not more than the first $count characters from html string.
+
+Instalation
+--------------
+
+1. Copy it to your `application/helpers` folder.
+
+Usage
+-------
+
+1. Load the helper: `$this->load->helper('text');`
+2. Use it in your **Controller**, **Model** or **View**.
+
+### Example
+
+	$string = "Here is a nice text string consisting of eleven words.";
+	$string = html_excerpt($string, 25);
+	// Returns: Here is a nice text strin…
+
+The third parameter is an optional suffix added to the string, if undeclared this helper uses an ellipsis.
+
+This function properly strip all HTML tags including script and style and returns plain text.  
+UTF-8, tags and entities safe prefix extraction. Entities inside will *NOT* be counted as one character. For example `&amp;` will be counted as 4, `&lt;` as 3, etc.
